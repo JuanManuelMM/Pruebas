@@ -32,9 +32,9 @@ CREATE PROCEDURE crear_persona(in cantidad int unsigned)
 BEGIN
 	declare variable varchar(10);
 	declare contador int default 1;
-    declare salario int;
-    declare copia int;
-    declare nombre text;
+	declare salario int;
+	declare copia int;
+	declare nombre text;
     
 	set contador = (select count(*) from persona) + 1;
 	set copia = contador - 1;
@@ -97,7 +97,7 @@ $$
 
 DELIMITER ;
 SELECT calcular_porcentaje('00001');
-;
+
 ```
 
 #### Creación de la función subsidio y llamada
@@ -105,8 +105,9 @@ SELECT calcular_porcentaje('00001');
 ```sql
 DELIMITER $$
 DROP FUNCTION IF EXISTS subsidio$$
-DETERMINISTIC
+
 CREATE FUNCTION subsidio(identificador varchar(10)) RETURNS DOUBLE
+DETERMINISTIC
 BEGIN
 	DECLARE resultado DOUBLE;
 	
@@ -121,7 +122,7 @@ $$
 
 DELIMITER ;
 SELECT subsidio('00001');
-;
+
 
 ```
 
