@@ -1,0 +1,13 @@
+set texto=%1
+
+echo %texto%
+
+
+
+echo Tu commit es: %texto%, ¿estás seguro de hacer el push?(Y/N)
+
+set /p respuesta= 
+
+if 
+
+git add . ; git commit -m %texto% ; git push
